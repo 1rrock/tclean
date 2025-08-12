@@ -8,7 +8,7 @@ export const SITE_CONFIG = {
 // 연락처 정보
 export const CONTACT_INFO = {
   kakaoUrl: 'https://pf.kakao.com/_xjxjxjxj',
-  formUrl: 'https://forms.gle/abcd1234',
+  formUrl: process.env.NEXT_PUBLIC_QUOTE_FORM_URL,
   businessInfo: {
     name: '믿고 맡기는 청소',
     representative: '홍길동',

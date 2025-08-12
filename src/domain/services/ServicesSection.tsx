@@ -55,9 +55,9 @@ export function ServicesSection() {
               <div className="flex items-start justify-between gap-4">
                 <div>
                   <h3 className="text-lg font-semibold">{service.title}</h3>
-                  <div className="mt-1 text-sm text-gray-600">
-                    작업 시간 {service.workTime} · 인원 {service.workers}~{service.workers + 2}인
-                  </div>
+                  {/*<div className="mt-1 text-sm text-gray-600">*/}
+                  {/*  작업 시간 {service.workTime} · 인원 {service.workers}~{service.workers + 2}인*/}
+                  {/*</div>*/}
                 </div>
                 <div className="flex flex-wrap gap-2">
                   {service.features.map((feature) => (

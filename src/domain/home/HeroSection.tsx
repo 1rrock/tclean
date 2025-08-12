@@ -4,7 +4,7 @@ import { Badge, Button, Container, Section } from "../../shared/ui";
 import { CONTACT_INFO, ANALYTICS_EVENTS } from "../../shared/constants";
 import { track } from "../../shared/utils";
 
-const COMPANY_PHILOSOPHY = ["하루 한 집", "디테일 청소", "추가비용 없음"];
+const COMPANY_PHILOSOPHY = ["하루 한 집", "디테일 청소", "정찰제 운영"];
 
 export function HeroSection() {
   const handleQuoteClick = () => {
@@ -39,15 +39,6 @@ export function HeroSection() {
             하루 한 집만 작업하는{" "}
             <span className="text-emerald-700">프리미엄 입주청소</span>
           </motion.h1>
-
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="mt-4 text-base text-gray-700 sm:text-lg"
-          >
-            이사 전·후, 거주, 인테리어 후까지 꼼꼼하게.
-          </motion.p>
 
           <div className="mt-8 flex flex-wrap items-center gap-3">
             {COMPANY_PHILOSOPHY.map((philosophy) => (
