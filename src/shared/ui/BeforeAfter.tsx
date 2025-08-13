@@ -14,52 +14,60 @@ export default function BeforeAfter({
   beforeLabel = "Before",
   afterLabel = "After"
 }: BeforeAfterProps) {
-  const [sliderPosition, setSliderPosition] = React.useState(50);
+  const [isHovered, setIsHovered] = React.useState(false);
 
   return (
-    <div className="relative h-full w-full overflow-hidden rounded-lg">
-      {/* Before 이미지 */}
-      <img
-        src={before}
-        alt={beforeLabel}
-        className="absolute inset-0 h-full w-full object-cover"
-      />
-
-      {/* After 이미지 (슬라이더 위치에 따라 표시) */}
+    <div
+      className="relative h-full w-full cursor-pointer group"
+      style={{ perspective: '1000px' }}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
       <div
-        className="absolute inset-0 overflow-hidden"
-        style={{ width: `${sliderPosition}%` }}
+        className="relative w-full h-full transition-transform duration-700 ease-in-out"
+        style={{
+          transformStyle: 'preserve-3d',
+          transform: isHovered ? 'rotateY(180deg)' : 'rotateY(0deg)'
+        }}
       >
-        <img
-          src={after}
-          alt={afterLabel}
-          className="h-full w-full object-cover"
-        />
-      </div>
+        {/* 앞면 - Before 이미지 */}
+        <div
+          className="absolute inset-0 w-full h-full rounded-lg overflow-hidden"
+          style={{ backfaceVisibility: 'hidden' }}
+        >
+          <img
+            src={before}
+            alt={beforeLabel}
+            className="w-full h-full object-cover"
+          />
+          {/* 앞면 라벨 */}
+          <div className="absolute left-3 top-3 rounded bg-black/50 px-2 py-1 text-xs text-white z-10">
+            {beforeLabel}
+          </div>
+          {/* 플립 힌트 */}
+          <div className="absolute bottom-3 left-1/2 transform -translate-x-1/2 rounded bg-black/50 px-3 py-1 text-xs text-white opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-10">
+            Hover to flip
+          </div>
+        </div>
 
-      {/* 슬라이더 */}
-      <input
-        type="range"
-        min={0}
-        max={100}
-        value={sliderPosition}
-        onChange={(e) => setSliderPosition(parseInt(e.target.value))}
-        className="absolute bottom-3 left-1/2 z-10 -translate-x-1/2 w-[80%] cursor-ew-resize accent-emerald-600"
-        aria-label="before-after slider"
-      />
-
-      {/* 구분선 */}
-      <div
-        className="pointer-events-none absolute inset-y-0 z-10 w-0.5 bg-white/80 shadow"
-        style={{ left: `${sliderPosition}%` }}
-      />
-
-      {/* 라벨 */}
-      <div className="absolute left-3 top-3 rounded bg-black/50 px-2 py-1 text-xs text-white">
-        {beforeLabel}
-      </div>
-      <div className="absolute right-3 top-3 rounded bg-black/50 px-2 py-1 text-xs text-white">
-        {afterLabel}
+        {/* 뒷면 - After 이미지 */}
+        <div
+          className="absolute inset-0 w-full h-full rounded-lg overflow-hidden"
+          style={{
+            backfaceVisibility: 'hidden',
+            transform: 'rotateY(180deg)'
+          }}
+        >
+          <img
+            src={after}
+            alt={afterLabel}
+            className="w-full h-full object-cover"
+          />
+          {/* 뒷면 라벨 */}
+          <div className="absolute left-3 top-3 rounded bg-black/50 px-2 py-1 text-xs text-white z-10">
+            {afterLabel}
+          </div>
+        </div>
       </div>
     </div>
   )

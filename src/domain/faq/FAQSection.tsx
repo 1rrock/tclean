@@ -34,24 +34,24 @@ function AccordionItem({ faq }: { faq: FAQ }) {
   const { isOpen, toggle, contentRef, contentStyle } = useAccordion();
 
   return (
-    <div className="border-b last:border-b-0">
+    <div className="border-b border-muted last:border-b-0">
       <button
         onClick={toggle}
-        className="flex w-full cursor-pointer items-center justify-between p-5 text-left text-sm font-medium hover:bg-gray-50/50 transition-colors"
+        className="flex w-full cursor-pointer items-center justify-between p-5 text-left text-sm font-medium text-primary hover:bg-primary/5 transition-all duration-300"
         aria-expanded={isOpen}
       >
-        {faq.question}
+        <span className="font-semibold">{faq.question}</span>
         <span
-          className={`ml-4 text-gray-500 transition-transform duration-300 ${
+          className={`ml-4 text-primary transition-transform duration-300 ${
             isOpen ? 'rotate-180' : 'rotate-0'
           }`}
         >
           ⌃
         </span>
       </button>
-      <div ref={contentRef} style={contentStyle}>
-        <div className="px-5 pb-5">
-          <p className="text-sm text-gray-700">{faq.answer}</p>
+      <div ref={contentRef} style={contentStyle} className="accordion-content">
+        <div className="px-5 pb-5 bg-muted/30">
+          <p className="text-sm text-accent leading-relaxed">{faq.answer}</p>
         </div>
       </div>
     </div>
@@ -60,14 +60,23 @@ function AccordionItem({ faq }: { faq: FAQ }) {
 
 export function FAQSection() {
   return (
-    <Section id="faq" className="py-16">
+    <Section id="faq" className="py-16 bg-gradient-to-br from-white to-muted/20">
       <Container>
-        <h2 className="text-2xl font-bold sm:text-3xl">문의 · FAQ</h2>
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-bold text-primary sm:text-4xl mb-4">
+            자주 묻는 질문
+          </h2>
+          <p className="text-accent max-w-2xl mx-auto">
+            고객님들이 가장 많이 궁금해하시는 내용들을 정리했습니다.
+          </p>
+        </div>
 
-        <div className="mt-6 rounded-2xl border bg-white/70">
-          {FAQ_DATA.map((faq) => (
-            <AccordionItem key={faq.id} faq={faq} />
-          ))}
+        <div className="max-w-4xl mx-auto">
+          <div className="rounded-2xl border border-muted bg-white/80 backdrop-blur-sm shadow-lg overflow-hidden">
+            {FAQ_DATA.map((faq) => (
+              <AccordionItem key={faq.id} faq={faq} />
+            ))}
+          </div>
         </div>
       </Container>
     </Section>

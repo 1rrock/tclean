@@ -14,12 +14,12 @@ export function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-40 w-full border-b bg-white/80 backdrop-blur">
+    <header className="sticky top-0 z-40 w-full border-b border-muted bg-white/90 backdrop-blur-md shadow-sm">
       <Container>
         <div className="flex h-16 items-center justify-between gap-4">
           <a
             href="#home"
-            className="flex items-center gap-2 font-extrabold tracking-tight"
+            className="flex items-center gap-2 font-extrabold tracking-tight text-primary hover:text-primary-dark transition-colors"
             onClick={() => handleNavClick('home')}
           >
            <img src="/logo.png" alt="로고" className="h-8 w-auto" />
@@ -43,7 +43,7 @@ export function Header() {
             </NavLink>
           </nav>
 
-          <Button onClick={handleQuoteClick} size="sm">
+          <Button onClick={handleQuoteClick} size="sm" className="btn-primary">
             견적 문의하기
           </Button>
         </div>

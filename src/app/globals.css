@@ -1,21 +1,43 @@
 @import "tailwindcss";
 
 :root {
+  /* 로고에 맞는 네이비 블루 테마 */
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #2c3e50;
+  --primary: #2c4f7c; /* 로고의 네이비 블루 */
+  --primary-dark: #1e3a5f;
+  --primary-light: #3d5a8a;
+  --accent: #34495e; /* 어두운 그레이 블루 */
+  --muted: #ecf0f1;
+  --border: #bdc3c7;
+  --text-light: #7f8c8d;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-dark: var(--primary-dark);
+  --color-primary-light: var(--primary-light);
+  --color-accent: var(--accent);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-text-light: var(--text-light);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #1a1a1a;
+    --foreground: #ffffff;
+    --primary: #3d5a8a; /* 다크모드에서는 조금 더 밝은 네이비 */
+    --primary-dark: #2c4f7c;
+    --primary-light: #4a6ba3;
+    --accent: #34495e;
+    --muted: #2c2c2c;
+    --border: #404040;
+    --text-light: #a0a0a0;
   }
 }
 
@@ -31,4 +53,47 @@ body {
 
 html {
   scroll-behavior: smooth;
+}
+
+/* 커스텀 유틸리티 클래스 */
+.text-primary { color: var(--primary); }
+.text-primary-dark { color: var(--primary-dark); }
+.text-primary-light { color: var(--primary-light); }
+.text-accent { color: var(--accent); }
+.text-muted { color: var(--text-light); }
+
+.bg-primary { background-color: var(--primary); }
+.bg-primary-dark { background-color: var(--primary-dark); }
+.bg-primary-light { background-color: var(--primary-light); }
+.bg-accent { background-color: var(--accent); }
+.bg-muted { background-color: var(--muted); }
+
+.border-primary { border-color: var(--primary); }
+.border-muted { border-color: var(--border); }
+
+/* 버튼 스타일 */
+.btn-primary {
+  background-color: var(--primary);
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-1px);
+}
+
+/* 아코디언 애니메이션 */
+.accordion-content {
+  transition: height 0.3s ease-in-out;
+  overflow: hidden;
+}
+
+/* 그라데이션 배경 */
+.gradient-primary {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+}
+
+.gradient-accent {
+  background: linear-gradient(135deg, var(--accent) 0%, var(--primary) 100%);
 }

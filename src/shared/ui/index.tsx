@@ -15,7 +15,7 @@ export const Card = ({
   onClick?: () => void;
 }) => (
   <div
-    className={cn("rounded-2xl border bg-white/70 backdrop-blur shadow-sm", className)}
+    className={cn("rounded-2xl border border-muted bg-white/70 backdrop-blur shadow-sm hover:shadow-md transition-all duration-300", className)}
     onClick={onClick}
     role={onClick ? "button" : undefined}
     tabIndex={onClick ? 0 : undefined}
@@ -26,13 +26,13 @@ export const Card = ({
 );
 
 export const Badge = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => (
-  <span className={cn("inline-flex items-center rounded-full border px-3 py-1 text-xs font-medium text-gray-700", className)}>
+  <span className={cn("inline-flex items-center rounded-full border border-primary bg-primary/10 px-3 py-1 text-xs font-medium text-primary", className)}>
     {children}
   </span>
 );
 
 export const NavLink = ({ href, children, onClick }: { href: string; children: React.ReactNode; onClick?: () => void }) => (
-  <a href={href} onClick={onClick} className="text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors">
+  <a href={href} onClick={onClick} className="text-sm font-medium text-accent hover:text-primary transition-colors duration-300">
     {children}
   </a>
 );
@@ -61,12 +61,12 @@ export const Button = ({
   size?: "sm" | "md" | "lg";
   className?: string;
 } & React.ButtonHTMLAttributes<HTMLButtonElement>) => {
-  const baseStyles = "inline-flex items-center justify-center rounded-full font-semibold transition-colors";
+  const baseStyles = "inline-flex items-center justify-center rounded-full font-semibold transition-all duration-300 hover:transform hover:scale-105";
 
   const variants = {
-    primary: "bg-emerald-600 text-white shadow hover:bg-emerald-700",
-    secondary: "bg-gray-100 text-gray-900 hover:bg-gray-200",
-    outline: "border border-gray-300 bg-white text-gray-700 hover:bg-gray-50"
+    primary: "bg-primary text-white shadow hover:bg-primary-dark",
+    secondary: "bg-muted text-accent hover:bg-primary/10",
+    outline: "border border-primary bg-white text-primary hover:bg-primary hover:text-white"
   };
 
   const sizes = {
