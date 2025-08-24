@@ -3,7 +3,7 @@ import "./globals.css";
 
 const siteName = "믿고 맡기는 청소";
 const siteUrl = "https://mclean.co.kr"; // 실제 도메인으로 교체 필요
-const defaultDesc = "하루 한 집만 작업하는 프리미엄 입주청소 – 이사 전·후, 거주, 인테리어 후까지 꼼꼼하게.";
+const defaultDesc = "하루 한 집만 작업하는 프리미엄 청소 – 이사 전·후, 거주, 인테리어 후까지 꼼꼼하게.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

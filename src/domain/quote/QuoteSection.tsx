@@ -23,11 +23,11 @@ export function QuoteSection() {
             <p className="mt-2 text-sm text-gray-700">
               평수, 구조, 확장 여부, 희망 날짜, 특이사항을 남겨주시면 빠르게 답변드립니다.
             </p>
-            <ul className="mt-4 list-disc space-y-1 pl-5 text-sm text-gray-700">
-              <li>추가비용 없음 (예외 사전 안내)</li>
-              <li>하루 한 집만 진행</li>
-              <li>스팀·피톤치드 포함</li>
-            </ul>
+            {/*<ul className="mt-4 list-disc space-y-1 pl-5 text-sm text-gray-700">*/}
+            {/*  <li>추가비용 없음 (예외 사전 안내)</li>*/}
+            {/*  <li>하루 한 집만 진행</li>*/}
+            {/*  <li>스팀·피톤치드 포함</li>*/}
+            {/*</ul>*/}
           </div>
 
           <Card className="p-6">
@@ -36,21 +36,21 @@ export function QuoteSection() {
               className="w-full"
               size="lg"
             >
-              구글폼으로 이동하기
+              견적 문의하기
             </Button>
             <p className="mt-3 text-center text-xs text-gray-600">
-              폼 내용: 평수, 구조, 확장 여부, 희망 날짜, 특이사항
+              예약 전 확인사항 확인 후 견적 문의 부탁드립니다.
             </p>
 
-            <div className="mt-6 text-center">
-              <Button
-                onClick={handleKakaoClick}
-                variant="outline"
-                className="bg-yellow-400 border-yellow-400 hover:bg-yellow-500 text-gray-900"
-              >
-                💬 카카오톡 채널 상담
-              </Button>
-            </div>
+            {/*<div className="mt-6 text-center">*/}
+            {/*  <Button*/}
+            {/*    onClick={handleKakaoClick}*/}
+            {/*    variant="outline"*/}
+            {/*    className="bg-yellow-400 border-yellow-400 hover:bg-yellow-500 text-gray-900"*/}
+            {/*  >*/}
+            {/*    💬 카카오톡 채널 상담*/}
+            {/*  </Button>*/}
+            {/*</div>*/}
           </Card>
         </div>
       </Container>

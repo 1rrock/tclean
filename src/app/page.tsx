@@ -1,11 +1,12 @@
-import { Header } from "../shared/ui/Header";
-import { Footer } from "../shared/ui/Footer";
-import { HeroSection } from "../domain/home/HeroSection";
-import { AboutSection } from "../domain/about/AboutSection";
-import { ServicesSection } from "../domain/services/ServicesSection";
-import { PortfolioSection } from "../domain/portfolio/PortfolioSection";
-import { QuoteSection } from "../domain/quote/QuoteSection";
-import { FAQSection } from "../domain/faq/FAQSection";
+import { Header } from "@/shared/ui/Header";
+import { Footer } from "@/shared/ui/Footer";
+import { HeroSection } from "@/domain/home/HeroSection";
+// import { AboutSection } from "@/domain/about/AboutSection";
+import { ServicesSection } from "@/domain/services/ServicesSection";
+// import { PortfolioSection } from "@/domain/portfolio/PortfolioSection";
+import { InfoSection } from "@/domain/info/InfoSection_new";
+import { QuoteSection } from "@/domain/quote/QuoteSection";
+import { FAQSection } from "@/domain/faq/FAQSection";
 
 export default function Home() {
   return (
@@ -13,9 +14,10 @@ export default function Home() {
       <Header />
       <main>
         <HeroSection />
-        <AboutSection />
+        {/*<AboutSection />*/}
         <ServicesSection />
-        <PortfolioSection />
+        {/*<PortfolioSection />*/}
+        <InfoSection />
         <QuoteSection />
         <FAQSection />
       </main>

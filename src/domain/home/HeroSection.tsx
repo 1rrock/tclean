@@ -36,8 +36,8 @@ export function HeroSection() {
             transition={{ duration: 0.5 }}
             className="text-3xl font-extrabold leading-tight text-primary sm:text-5xl"
           >
-            하루 한 집만 작업하는{" "}
-            <span className="gradient-primary text-white bg-clip-text">프리미엄 입주청소</span>
+            하루 한 집만 작업하는{" "} <br />
+            <span className="gradient-primary text-white bg-clip-text px-1">프리미엄 청소</span>
           </motion.h1>
 
           <motion.p
@@ -46,7 +46,7 @@ export function HeroSection() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="mt-6 text-lg text-accent max-w-2xl leading-relaxed"
           >
-            전문적인 장비와 숙련된 기술로 새집처럼 깔끔하게 정리해드립니다.
+              믿고 맡길 수 있는 정직한 청소업체! 믿고 맡기는 청소입니다.
           </motion.p>
 
           <motion.div
@@ -66,10 +66,10 @@ export function HeroSection() {
             transition={{ duration: 0.5, delay: 0.6 }}
             className="mt-8 flex gap-3"
           >
-            <Button onClick={handleQuoteClick} size="lg" className="btn-primary">
+            <Button onClick={handleQuoteClick} size="md" className="btn-primary">
               지금 견적 문의하기
             </Button>
-            <Button onClick={handleServicesClick} variant="outline" size="lg">
+            <Button onClick={handleServicesClick} className="btn-primary" variant="outline" size="md">
               서비스 보러가기
             </Button>
           </motion.div>

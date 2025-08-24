@@ -6,7 +6,6 @@ const COMPANY_INFO = {
   philosophy: [
     "하루 한 집 집중 작업으로 품질 우선",
     "모서리·몰딩·틈새까지 디테일 청소",
-    "추가비용 없음 (예외 사전안내)"
   ],
   equipment: [
     { name: "컬비 청소기", img: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=640&auto=format&fit=crop" },
@@ -36,7 +35,6 @@ export function AboutSection() {
       <Container>
         <div className="mb-8 flex items-end justify-between">
           <h2 className="text-2xl font-bold sm:text-3xl">회사 소개</h2>
-          <Badge className="bg-red-50 text-red-700 border-red-200">사이 청소는 진행하지 않음</Badge>
         </div>
 
         <div className="grid grid-cols-1 gap-6 md:grid-cols-3">

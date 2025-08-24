@@ -32,7 +32,7 @@ export const Badge = ({ children, className = "" }: { children: React.ReactNode;
 );
 
 export const NavLink = ({ href, children, onClick }: { href: string; children: React.ReactNode; onClick?: () => void }) => (
-  <a href={href} onClick={onClick} className="text-sm font-medium text-accent hover:text-primary transition-colors duration-300">
+  <a href={href} onClick={onClick} className="w-24 justify-center text-lg items-center flex h-full border-b-2 border-transparent text-[#fff] font-medium hover:border-white transition-all">
     {children}
   </a>
 );

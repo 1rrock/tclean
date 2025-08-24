@@ -18,12 +18,6 @@ const FAQ_DATA: FAQ[] = [
   },
   {
     id: "faq-3",
-    question: "추가비용이 있나요?",
-    answer: "원칙적으로 없습니다. 다만 쓰레기 다량 방치, 중공청소 미실시 등 예외는 사전 안내 후 협의합니다.",
-    category: "비용"
-  },
-  {
-    id: "faq-4",
     question: "어떤 장비를 사용하나요?",
     answer: "컬비 청소기, 스팀기, 친환경 약품, 피톤치드 등을 사용합니다.",
     category: "장비"
@@ -40,13 +34,25 @@ function AccordionItem({ faq }: { faq: FAQ }) {
         className="flex w-full cursor-pointer items-center justify-between p-5 text-left text-sm font-medium text-primary hover:bg-primary/5 transition-all duration-300"
         aria-expanded={isOpen}
       >
-        <span className="font-semibold">{faq.question}</span>
+        <p className="flex items-center gap-2"><span className="text-xl font-bold">Q</span> {faq.question}</p>
         <span
           className={`ml-4 text-primary transition-transform duration-300 ${
             isOpen ? 'rotate-180' : 'rotate-0'
           }`}
         >
-          ⌃
+          <svg
+            className="w-5 h-5"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M19 9l-7 7-7-7"
+            />
+          </svg>
         </span>
       </button>
       <div ref={contentRef} style={contentStyle} className="accordion-content">

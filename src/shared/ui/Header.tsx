@@ -2,6 +2,7 @@
 import { Container, NavLink, Button } from "../ui";
 import { CONTACT_INFO, ANALYTICS_EVENTS } from "../constants";
 import { track, scrollToSection } from "../utils";
+import Image from "next/image";
 
 export function Header() {
   const handleQuoteClick = () => {
@@ -14,18 +15,18 @@ export function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-40 w-full border-b border-muted bg-white/90 backdrop-blur-md shadow-sm">
+    <header className="sticky top-0 z-40 w-full border-b border-muted bg-[#0B256B] backdrop-blur-md shadow-sm">
       <Container>
         <div className="flex h-16 items-center justify-between gap-4">
           <a
             href="#home"
-            className="flex items-center gap-2 font-extrabold tracking-tight text-primary hover:text-primary-dark transition-colors"
+            className="flex h-[70%] items-center gap-2 font-extrabold tracking-tight text-primary hover:text-primary-dark transition-colors"
             onClick={() => handleNavClick('home')}
           >
-           <img src="/logo.png" alt="로고" className="h-8 w-auto" />
+           <Image src="/logo.svg" alt="로고" width={120} height={40} className="h-full w-auto" />
           </a>
 
-          <nav className="hidden items-center gap-6 sm:flex">
+          <nav className="hidden h-full items-center gap-10 sm:flex">
             <NavLink href="#about" onClick={() => handleNavClick('about')}>
               회사 소개
             </NavLink>
@@ -43,7 +44,7 @@ export function Header() {
             </NavLink>
           </nav>
 
-          <Button onClick={handleQuoteClick} size="sm" className="btn-primary">
+          <Button onClick={handleQuoteClick} size="md" className="btn-primary text-sm">
             견적 문의하기
           </Button>
         </div>

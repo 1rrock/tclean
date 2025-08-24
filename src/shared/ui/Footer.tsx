@@ -29,7 +29,7 @@ export function Footer() {
             <p className="mt-2 text-xs leading-6 text-gray-600">
               상호: {CONTACT_INFO.businessInfo.name}<br/>
               대표: {CONTACT_INFO.businessInfo.representative}<br/>
-              사업자번호: {CONTACT_INFO.businessInfo.businessNumber}<br/>
+              {/*사업자번호: {CONTACT_INFO.businessInfo.businessNumber}<br/>*/}
               주소: {CONTACT_INFO.businessInfo.address}<br/>
               연락처: {CONTACT_INFO.businessInfo.phone}
             </p>

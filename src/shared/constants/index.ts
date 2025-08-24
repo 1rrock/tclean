@@ -1,7 +1,7 @@
 // 기본 상수
 export const SITE_CONFIG = {
   name: '믿고 맡기는 청소',
-  description: '하루 한 집만 작업하는 프리미엄 입주청소',
+  description: '하루 한 집만 작업하는 프리미엄 청소',
   url: 'https://mclean.co.kr',
 } as const;
 
@@ -11,10 +11,10 @@ export const CONTACT_INFO = {
   formUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSdTG4qtl2a2mRKGNo8y7ib3oL2lgNrRQySFUeyNTq39skc0DQ/viewform',
   businessInfo: {
     name: '믿고 맡기는 청소',
-    representative: '홍길동',
-    businessNumber: '123-45-67890',
-    address: '서울특별시 강남구 테헤란로 123',
-    phone: '010-1234-5678',
+    representative: '장준섭',
+    // businessNumber: '123-45-67890',
+    address: '인천광역시 중구 흰바위로59번길 8 믿고 맡기는 청소',
+    // phone: '010-1234-5678',
   },
 } as const;
 
