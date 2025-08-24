@@ -1,5 +1,6 @@
 'use client'
 import { Badge, Card, Container, Section } from "../../shared/ui";
+import Image from "next/image";
 
 const COMPANY_INFO = {
   name: "믿고 맡기는 청소",
@@ -49,7 +50,7 @@ export function AboutSection() {
             <div className="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-4">
               {COMPANY_INFO.equipment.map((equipment) => (
                 <figure key={equipment.name} className="text-center">
-                  <img
+                  <Image
                     src={equipment.img}
                     alt={equipment.name}
                     className="h-24 w-full rounded-lg object-cover"
@@ -67,7 +68,7 @@ export function AboutSection() {
             <div className="mt-4 space-y-4">
               {COMPANY_INFO.team.map((member) => (
                 <div key={member.name} className="flex items-center gap-3">
-                  <img
+                  <Image
                     src={member.photo}
                     alt={member.name}
                     className="h-12 w-12 rounded-full object-cover"

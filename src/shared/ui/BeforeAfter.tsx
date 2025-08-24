@@ -1,5 +1,6 @@
 'use client'
 import React from 'react'
+import Image from "next/image";
 
 interface BeforeAfterProps {
   before: string;
@@ -35,10 +36,11 @@ export default function BeforeAfter({
           className="absolute inset-0 w-full h-full rounded-lg overflow-hidden"
           style={{ backfaceVisibility: 'hidden' }}
         >
-          <img
+          <Image
             src={before}
             alt={beforeLabel}
-            className="w-full h-full object-cover"
+            fill
+            className="object-cover"
           />
           {/* 앞면 라벨 */}
           <div className="absolute left-3 top-3 rounded bg-black/50 px-2 py-1 text-xs text-white z-10">
@@ -58,10 +60,11 @@ export default function BeforeAfter({
             transform: 'rotateY(180deg)'
           }}
         >
-          <img
+          <Image
             src={after}
             alt={afterLabel}
-            className="w-full h-full object-cover"
+            fill
+            className="object-cover"
           />
           {/* 뒷면 라벨 */}
           <div className="absolute left-3 top-3 rounded bg-black/50 px-2 py-1 text-xs text-white z-10">

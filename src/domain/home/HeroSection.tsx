@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Badge, Button, Container, Section } from "../../shared/ui";
 import { CONTACT_INFO, ANALYTICS_EVENTS } from "../../shared/constants";
 import { track } from "../../shared/utils";
+import Image from "next/image";
 
 const COMPANY_PHILOSOPHY = ["하루 한 집", "디테일 청소", "정찰제 운영"];
 
@@ -19,14 +20,14 @@ export function HeroSection() {
 
   return (
     <Section id="home" className="relative overflow-hidden">
-      <div className="absolute inset-0 -z-10">
-        <img
-          src="https://images.unsplash.com/photo-1564540574859-0dfb63985947?q=80&w=1800&auto=format&fit=crop"
-          className="h-full w-full object-cover opacity-20"
-          alt="현장 작업 배경"
-        />
-        <div className="absolute inset-0 bg-gradient-to-br from-white via-primary/5 to-primary/10" />
-      </div>
+      {/*<div className="absolute inset-0 -z-10">*/}
+        {/*<Image*/}
+        {/*  src="https://images.unsplash.com/photo-1564540574859-0dfb63985947?q=80&w=1800&auto=format&fit=crop"*/}
+        {/*  className="h-full w-full object-cover opacity-20"*/}
+        {/*  alt="현장 작업 배경"*/}
+        {/*/>*/}
+      {/*  <div className="absolute inset-0 bg-gradient-to-br from-white via-primary/5 to-primary/10" />*/}
+      {/*</div>*/}
 
       <Container>
         <div className="flex min-h-[72vh] flex-col items-start justify-center py-16">
